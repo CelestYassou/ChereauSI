@@ -21,7 +21,8 @@
         }
         .data-container {
             margin: 20px auto;
-            width: 72.5%;
+            width: 90%;
+            max-width: 72.5%;
             background-color: white;
             padding: 20px;
             border-radius: 15px;
@@ -59,8 +60,9 @@
             justify-content: space-between;
             border-radius: 0.75rem;
             background-color: white;
-            width: 300px;
-            height: 370px;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
             cursor: pointer;
             transition: transform 0.3s;
@@ -71,8 +73,9 @@
             justify-content: space-between;
             border-radius: 0.75rem;
             background-color: white;
-            width: 950px;
-            height: 395px;
+            width: 100%;
+            max-width: 950px;
+            height: auto;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
             cursor: pointer;
             transition: transform 0.3s;
@@ -83,8 +86,9 @@
             justify-content: space-between;
             border-radius: 0.75rem;
             background-color: white;
-            width: 950px;
-            height: 290px;
+            width: 100%;
+            max-width: 950px;
+            height: auto;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
             cursor: pointer;
             transition: transform 0.3s;
@@ -95,8 +99,9 @@
             justify-content: space-between;
             border-radius: 0.75rem;
             background-color: white;
-            width: 950px;
-            height: 340px;
+            width: 100%;
+            max-width: 950px;
+            height: auto;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
             cursor: pointer;
             transition: transform 0.3s;
@@ -107,8 +112,9 @@
             justify-content: space-between;
             border-radius: 0.75rem;
             background-color: white;
-            width: 950px;
-            height: 320px;
+            width: 100%;
+            max-width: 950px;
+            height: auto;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
             cursor: pointer;
             transition: transform 0.3s;
@@ -119,8 +125,9 @@
             justify-content: space-between;
             border-radius: 0.75rem;
             background-color: white;
-            width: 950px;
-            height: 226px;
+            width: 100%;
+            max-width: 950px;
+            height: auto;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
             cursor: pointer;
             transition: transform 0.3s;
@@ -131,8 +138,9 @@
             justify-content: space-between;
             border-radius: 0.75rem;
             background-color: white;
-            width: 950px;
-            height: 510px;
+            width: 100%;
+            max-width: 950px;
+            height: auto;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
             cursor: pointer;
             transition: transform 0.3s;
@@ -144,10 +152,7 @@
             gap: 20px;
             margin: 20px 0;
         }
-        .carde:hover {
-            transform: translateY(-5px);
-        }
-        .card:hover {
+        .carde:hover, .card:hover {
             transform: translateY(-5px);
         }
         .header {
@@ -159,7 +164,7 @@
             border-radius: 0.75rem;
             background-color: rgb(16, 55, 86);
             box-shadow: 0 10px 15px -3px rgba(33,150,243,.4), 0 4px 6px -4px rgba(33,150,243,.4);
-            height: 14rem;
+            height: auto;
         }
         .info {
             border: none;
@@ -270,6 +275,8 @@
         }
         video {
             border-radius: 10px;
+            width: 100%;
+            max-width: 880px;
         }
         .road::before,
         .road::after {
@@ -299,6 +306,8 @@
         }
         img {
             border-radius: 20px;
+            max-width: 100%;
+            height: auto;
         }
         @keyframes roadAnimation {
             0% {
@@ -333,6 +342,13 @@
             cursor: pointer;
         }
 
+        .menu-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
         .arrow {
             position: absolute;
             top: 50%;
@@ -358,6 +374,24 @@
         .menu-container:hover .arrow {
             display: block;
         }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .data-container {
+                width: 95%;
+            }
+            .card, .carde, .carde8, .carde9, .carde4, .carde3, .carde2 {
+                width: 100%;
+                max-width: 100%;
+            }
+            .cards, .cardes {
+                flex-direction: column;
+                align-items: center;
+            }
+            video {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -365,7 +399,7 @@
         <h1>Chereau : 2h Camion 2025</h1>
     </header>
     <div class="data-container">
-        <img width="900" height="400" src="https://cdn.prod.website-files.com/6395cc4bdd443004f95f77bf/63a45d2314e99c383bd714c3_road-face-creditchereau.jpeg">
+        <img src="https://cdn.prod.website-files.com/6395cc4bdd443004f95f77bf/63a45d2314e99c383bd714c3_road-face-creditchereau.jpeg" alt="Image de camion">
     </div>
     <div class="cardes">
         <div class="carde8" onclick="">
@@ -418,7 +452,7 @@
         <div class="carde" onclick="">
             <div class="info">
                 <p class="title">Comment l'avons nous contruit ?</p>
-                <p>Pour débuter, nous avons créé un plan détaillé de notre caisse. Puis Célestin, c'est occuper de la modéliser puis de l'enregistrer dans le format .dxf pour être ensuite découpé via une <a href="https://fr.wikipedia.org/wiki/Machine-outil_%C3%A0_commande_num%C3%A9rique">machine à commande numérique</a> (CNC). La découpe terminée, nous avons ajouté à notre caisse les différents composants bons a son fonctionnement tel qu'une matrice led adressable, un microcontrôleur Arduino Uno (une carte de programmation), des câbles et des connectiques pour l'alimentation électrique de tout ce système complexe et énergivore. Ensuite, Martin et Raphael se sont lancé la réalisation de l'application mobile en liant bakend et frontend (page utilisateur (interface graphique) Et bakend = "le fond" le code bon au fonctionnement cacher non-accessible pour l'utilisateur) à leurs application la rendant entièrement fonctionnel suite à plusieurs bug étant survenue. Les Garçons se sont ensuite attardées sur le design extérieur du camion en y ajoutant des impressions 3D, des autocollants, et même d'ailette aérodynamique pour rendre leur ouvre plus vrai que nature. C'est donc pour cela que nous sommes heureux de vous présenter comme vous l'avait jamais vu notre camion lors de la course 2h Camion se déroulant le jeudi 3 avril 2025 !</p>
+                <p>Pour débuter, nous avons créé un plan détaillé de notre caisse. Puis Célestin, c'est occuper de la modéliser puis de l'enregistrer dans le format .dxf pour être ensuite découpé via une <a href="https://fr.wikipedia.org/wiki/Machine-outil_%C3%A0_commande_num%C3%A9rique">machine à commande numérique</a> (CNC). La découpe terminée, nous avons ajouté à notre caisse les différents composants bons a son fonctionnement tel qu'une matrice led adressable, un microcontrôleur Arduino Uno (une carte de programmation), des câbles et des connectiques pour l'alimentation électrique de tout ce système complexe et énergivore. Ensuite, Martin et Raphael se sont lancé la réalisation de l'application mobile en liant bakend et frontend (page utilisateur (interface graphique) Et bakend = "le fond" le code bon au fonctionnement cacher non-accessible pour l'utilisateur) à leurs application la rendant entièrement fonctionnel suite à plusieurs bug étant survenue. Les Garçons se sont ensuite attardées sur le design extérieur du camion en y ajoutant des impressions 3D, des autocollants, et même d'ailette aérodynamique pour rendre leur ouvre plus vrai que nature. C'est donc pour cela que nous sommes heureux de vous présenter comme vous l'aviez jamais vu notre camion lors de la course 2h Camion se déroulant le jeudi 3 avril 2025 !</p>
             </div>
             <div class="footer">
                 <p class="tag">#CNC #Modélisation 3D #Programmation #Design</p>
@@ -451,7 +485,7 @@
         <div class="carde2">
             <div class="info">
                 <p class="title">Notre design du Camion</p>
-                <video width="880" height="400" controls autoplay muted>
+                <video controls autoplay muted>
                     <source src="SIVID3.mp4" type="video/mp4">
                     Votre navigateur ne supporte pas la balise vidéo HTML5.
                 </video>
@@ -472,8 +506,8 @@
         <div class="carde4" onclick="">
             <div class="info">
                 <p class="title">Nos Partenaires</p>
-                <img width="250" height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Chereau-Drive-You-Forward.jpg/210px-Chereau-Drive-You-Forward.jpg">
-                <img width="150" height="150" src="https://julliot.lycee.ac-normandie.fr/local/cache-vignettes/L200xH182/logo-lamo-64800.png?1729004561">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Chereau-Drive-You-Forward.jpg/210px-Chereau-Drive-You-Forward.jpg" alt="Logo Chereau">
+                <img src="https://julliot.lycee.ac-normandie.fr/local/cache-vignettes/L200xH182/logo-lamo-64800.png?1729004561" alt="Logo La Morandière">
             </div>
             <div class="footer">
                 <p class="tag">#Partenaires #Chereau #LaMorandière</p>
@@ -491,34 +525,125 @@
             </div>
         </div>
     </div>
-
-    <!-- Horizontal Scrolling Menu -->
-    <div class="menu-container">
-        <button class="arrow arrow-left" onclick="scrollMenu(-1)">&#9664;</button>
-        <div class="menu-content" id="menuContent">
-            <div class="menu-item">iPhone</div>
-            <div class="menu-item">iPad</div>
-            <div class="menu-item">Apple Watch</div>
-            <div class="menu-item">Apple Vision Pro</div>
-            <div class="menu-item">AirPods</div>
-            <div class="menu-item">AirTag</div>
-            <div class="menu-item">Apple TV 4K</div>
-            <div class="menu-item">HomePod</div>
-            <div class="menu-item">Accessoires</div>
-            <!-- Duplicate items for seamless looping -->
-            <div class="menu-item">iPhone</div>
-            <div class="menu-item">iPad</div>
-            <div class="menu-item">Apple Watch</div>
-            <div class="menu-item">Apple Vision Pro</div>
-            <div class="menu-item">AirPods</div>
-            <div class="menu-item">AirTag</div>
-            <div class="menu-item">Apple TV 4K</div>
-            <div class="menu-item">HomePod</div>
-            <div class="menu-item">Accessoires</div>
+    <h1>Nos composants embarqué</h1>
+    <div class="cards">
+        <div class="card" onclick="window.location.href='cardAU.html';">
+            <div class="info">
+                <img src="https://www.sciencethic.com/web/image/product.product/4804/image_1024/%5B650100-S59008%5D%20Carte%20Arduino%E2%84%A2%20Uno%20Rev.%203?unique=2d78890" alt="Image de Carte Arduino Uno">
+                <p class="title">Carte Arduino Uno</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Microcontrôleur</p>
+                <button type="button" class="action">+</button>
+            </div>
         </div>
-        <button class="arrow arrow-right" onclick="scrollMenu(1)">&#9654;</button>
+        <div class="card" onclick="window.location.href='card2.html';">
+            <div class="info">
+                <img src="https://www.pincab.eu/4974-large_default/panneau-de-leds-adressables-pour-backboard-8x8.jpg" alt="Image de panneau led adressable">
+                <p class="title">Panneau Led adressable</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#LED #Baterie</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='card3.html';">
+            <div class="info">
+                <img src="https://www.lextronic.fr/29563-thickbox_default/servomoteur-feetech-fs5113r.jpg" alt="Image de servomoteur noir">
+                <p class="title">Servomoteur</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Servomoteur #0-180°</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
     </div>
-
+    <div class="cards">
+        <div class="card" onclick="window.location.href='card1.html';">
+            <div class="info">
+                <img src="https://www.gotronic.fr/media/cache/app_shop_product_show_zoom/media/images-arobases/product/23667.jpg.webp" alt="Image de module bluetooth">
+                <p class="title">Module Bluetooth</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Microcontrôleur</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='card2.html';">
+            <div class="info">
+                <img src="https://www.a4.fr/pub/media/catalog/product/cache/7717c62a3bea7d9594c2dcdd8789079c/s-/s-104020048-led-adressable-chainable-grove-2.jpg" alt="Image de leds adressables">
+                <p class="title">Leds Adressables</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#LED #Baterie</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='card3.html';">
+            <div class="info">
+                <img src="https://www.gotronic.fr/media/cache/app_shop_product_show_zoom/media/images-arobases/product/31191.jpg.webp" alt="Image de capteur de courant">
+                <p class="title">Capteur de courant</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Servomoteur #0-180°</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="card" onclick="window.location.href='card1.html';">
+            <div class="info">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSVGfBspn_mVmrdo996SNzFDgwW2s6K-d0_EYxkIra9hzXS4-zEL-BxH-TFev7qfn5ToEXEKdYpJZ8RRv231r92ELtUcUqxCEQnD9zSZ681evUbgzzfQfh3_4hRQK39TxDjF6Izsg&usqp=CAc" alt="Image de capteur de tension">
+                <p class="title">Capteur de tension</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Microcontrôleur</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='card2.html';">
+            <div class="info">
+                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRS6l_a-gSQqvU_f8FU-kzgx9Uj4EfM7EW8p9eUYqVGRa-QmDjVYVe1c1489DMwCGbne4HlpVen86UG6gjpo_j6hqY9Uk3LYr0rwQ8AOp3II99IQd2Eg0p7KFtb7azoxs7GnNQkLEQ&usqp=CAc" alt="Image de panneau solaire">
+                <p class="title">Panneau solaire</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#LED #Baterie</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='card3.html';">
+            <div class="info">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQuaA8H3yJ6kG5R_Y5lQEBalM3SReuyHQpAr9Bgsy5HHeR4_uetqyFSqhmp0fCLG3rQZHOfVogsjV4dJQovuQjOgIZSEyv_20uTL1Mg04kLN_zUjTxxNVzpmv_FdV8vX3qXxWgg&usqp=CAc" alt="Image de régulateur de courant">
+                <p class="title">Régulateur de courant</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Servomoteur #0-180°</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="card" onclick="window.location.href='card1.html';">
+            <div class="info">
+                <img src="data:image/avif;base64,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" alt="Image de batterie grove">
+                <p class="title">Batterie éléctrique</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Microcontrôleur</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+    </div>
     <footer>
         <p>© Tous droits réservés au groupe 2h Camion Chereau : Lallement Célestin, Martin Sénécal-Gacel, Raphael Pons.</p>
     </footer>
@@ -564,40 +689,6 @@
         speedSelector.addEventListener('change', () => {
             video.playbackRate = speedSelector.value;
         });
-
-        let currentIndex = 0;
-        const menuContent = document.getElementById('menuContent');
-        const items = document.querySelectorAll('.menu-item');
-        const itemWidth = items[0].offsetWidth;
-        const totalItems = items.length / 2; // Half the items are duplicates
-
-        console.log("Total items:", totalItems);
-        console.log("Item width:", itemWidth);
-
-        function scrollMenu(direction) {
-            currentIndex = (currentIndex + direction + totalItems) % totalItems;
-            console.log("Current index:", currentIndex);
-            menuContent.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        }
-
-        // Auto-scroll
-        let autoScrollInterval = setInterval(() => {
-            scrollMenu(1);
-        }, 3000);
-
-        // Pause auto-scroll on hover
-        menuContent.addEventListener('mouseover', () => {
-            console.log("Mouse over: Pausing auto-scroll");
-            clearInterval(autoScrollInterval);
-        });
-
-        menuContent.addEventListener('mouseout', () => {
-            console.log("Mouse out: Resuming auto-scroll");
-            autoScrollInterval = setInterval(() => {
-                scrollMenu(1);
-            }, 3000);
-        });
-
     </script>
 </body>
 </html>
