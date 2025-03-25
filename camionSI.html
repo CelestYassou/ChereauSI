@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chereau : 2h Camion</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: rgb(16, 55, 86);
+            color: white;
+            padding: 1em 0;
+            border-radius: 0 0 15px 15px;
+        }
+        .data-container {
+            margin: 20px auto;
+            width: 72.5%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .data-item {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .sketchfab-embed-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 40%;
+        }
+        .sketchfab-embed-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90%;
+            border: none;
+            border-radius: 10px;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0.75rem;
+            background-color: white;
+            width: 300px;
+            height: 370px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .carde {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0.75rem;
+            background-color: white;
+            width: 950px;
+            height: 395px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .carde8 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0.75rem;
+            background-color: white;
+            width: 950px;
+            height: 290px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .carde9 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0.75rem;
+            background-color: white;
+            width: 950px;
+            height: 340px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .carde4 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0.75rem;
+            background-color: white;
+            width: 950px;
+            height: 320px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .carde3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0.75rem;
+            background-color: white;
+            width: 950px;
+            height: 226px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .carde2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0.75rem;
+            background-color: white;
+            width: 950px;
+            height: 510px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .cardes {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .carde:hover {
+            transform: translateY(-5px);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .header {
+            position: relative;
+            background-clip: border-box;
+            margin-top: 1.5rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-radius: 0.75rem;
+            background-color: rgb(16, 55, 86);
+            box-shadow: 0 10px 15px -3px rgba(33,150,243,.4), 0 4px 6px -4px rgba(33,150,243,.4);
+            height: 14rem;
+        }
+        .info {
+            border: none;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .title {
+            color: rgb(38 50 56);
+            letter-spacing: 0;
+            line-height: 1.375;
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer {
+            padding: 0.75rem;
+            border: 1px solid rgb(236 239 241);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(2, 119, 215, 0.082);
+            border-radius: 10px;
+        }
+        .tag {
+            font-weight: 300;
+            font-size: .75rem;
+            display: block;
+        }
+        .action {
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 6px -1px rgba(33,150,243,.4), 0 2px 4px -2px rgba(33,150,243,.4);
+            color: rgb(255 255 255);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: .75rem;
+            padding: 0.75rem 1.5rem;
+            background-color: rgb(16, 55, 86);
+            border-radius: 0.5rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            border-radius: 15px 15px 0 0;
+            margin-top: 20px;
+        }
+        .loader {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+        .truckWrapper {
+            width: 200px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+            justify-content: flex-end;
+            overflow-x: hidden;
+        }
+        .truckBody {
+            width: 130px;
+            height: fit-content;
+            margin-bottom: 6px;
+            animation: motion 1s linear infinite;
+        }
+        @keyframes motion {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(3px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        .truckTires {
+            width: 130px;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0px 10px 0px 15px;
+            position: absolute;
+            bottom: 0;
+        }
+        .truckTires svg {
+            width: 24px;
+        }
+        .road {
+            width: 100%;
+            height: 1.5px;
+            background-color: #282828;
+            position: relative;
+            bottom: 0;
+            align-self: flex-end;
+            border-radius: 3px;
+        }
+        video {
+            border-radius: 10px;
+        }
+        .road::before,
+        .road::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 100%;
+            background-color: #282828;
+            border-radius: 3px;
+            animation: roadAnimation 1.4s linear infinite;
+        }
+        .road::before {
+            right: -50%;
+            border-left: 10px solid white;
+        }
+        .road::after {
+            right: -65%;
+            width: 10px;
+            border-left: 4px solid white;
+        }
+        .lampPost {
+            position: absolute;
+            bottom: 0;
+            right: -90%;
+            height: 90px;
+            animation: roadAnimation 1.4s linear infinite;
+        }
+        img {
+            border-radius: 20px;
+        }
+        @keyframes roadAnimation {
+            0% {
+                transform: translateX(0px);
+            }
+            100% {
+                transform: translateX(-350px);
+            }
+        }
+
+        /* Styles for the horizontal scrolling menu */
+        .menu-container {
+            position: relative;
+            width: 80%;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+
+        .menu-content {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .menu-item {
+            flex: 0 0 auto;
+            padding: 20px;
+            min-width: 150px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 1;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .menu-container:hover .arrow {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chereau : 2h Camion 2025</h1>
+    </header>
+    <div class="data-container">
+        <img width="900" height="400" src="https://cdn.prod.website-files.com/6395cc4bdd443004f95f77bf/63a45d2314e99c383bd714c3_road-face-creditchereau.jpeg">
+    </div>
+    <div class="cardes">
+        <div class="carde8" onclick="">
+            <div class="info">
+                <p class="title">Quel est notre projet ?</p>
+                <p>Dans le cadre de notre séance de SI tous les mardis de 8h30 à 10h, nous nous sommes inscrits pour une course de Camion radiocommandés "2h Camion". Chaque équipe inscrite, reçue un partenaire finançant ainsi sa course. Ensuite, nous devons créer un camion aux couleurs de notre partenaire. Dans notre cas, nous avons repris le design du camion à l'hydrogène "Road" de l'entreprise Chereau. Lisez le reste de la page pour plus d'informations ! 😉⤵️</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#CNC #Modélisation 3D #Programmation #Design</p>
+            </div>
+        </div>
+    </div>
+    <h1>Les Pilotes, les développeurs</h1>
+    <div class="cards">
+        <div class="card" onclick="window.location.href='card1.html';">
+            <div class="header"></div>
+            <div class="info">
+                <p class="title">Raphael Pons</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#HTML #CSS #JavaScript #C++ #Scratch #Python</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='card2.html';">
+            <div class="header"></div>
+            <div class="info">
+                <p class="title">Martin Sénécal-Gacel</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#HTML #CSS #JavaScript #C++ #Scratch #Python</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='card3.html';">
+            <div class="header"></div>
+            <div class="info">
+                <p class="title">Célestin Lallement</p>
+                <p>Notre développeur web, backend, frontend et génie des systèmes embarqués.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#HTML #CSS #JavaScript #C++ #Scratch #Python</p>
+                <button type="button" class="action">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="cardes">
+        <div class="carde" onclick="">
+            <div class="info">
+                <p class="title">Comment l'avons nous contruit ?</p>
+                <p>Pour débuter, nous avons créé un plan détaillé de notre caisse. Puis Célestin, c'est occuper de la modéliser puis de l'enregistrer dans le format .dxf pour être ensuite découpé via une <a href="https://fr.wikipedia.org/wiki/Machine-outil_%C3%A0_commande_num%C3%A9rique">machine à commande numérique</a> (CNC). La découpe terminée, nous avons ajouté à notre caisse les différents composants bons a son fonctionnement tel qu'une matrice led adressable, un microcontrôleur Arduino Uno (une carte de programmation), des câbles et des connectiques pour l'alimentation électrique de tout ce système complexe et énergivore. Ensuite, Martin et Raphael se sont lancé la réalisation de l'application mobile en liant bakend et frontend (page utilisateur (interface graphique) Et bakend = "le fond" le code bon au fonctionnement cacher non-accessible pour l'utilisateur) à leurs application la rendant entièrement fonctionnel suite à plusieurs bug étant survenue. Les Garçons se sont ensuite attardées sur le design extérieur du camion en y ajoutant des impressions 3D, des autocollants, et même d'ailette aérodynamique pour rendre leur ouvre plus vrai que nature. C'est donc pour cela que nous sommes heureux de vous présenter comme vous l'avait jamais vu notre camion lors de la course 2h Camion se déroulant le jeudi 3 avril 2025 !</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#CNC #Modélisation 3D #Programmation #Design</p>
+            </div>
+        </div>
+    </div>
+    <div class="cardes">
+        <div class="carde3" onclick="">
+            <div class="info">
+                <p class="title">Quels sont nos objectifs ?</p>
+                <p>Nos objectifs sont dans un premier temps de remporter haut la main le concours 2h Camion puis nous souhaiterons remporter ensuite une grande partie des prix disponibles.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Gagner #Prix #Objectifs</p>
+            </div>
+        </div>
+    </div>
+    <div class="cardes">
+        <div class="carde4" onclick="">
+            <div class="info">
+                <p class="title">Qu'avons nous appris ?</p>
+                <p>Lors de la préparation à ce projet, nous avons appris tout d'abord a travaillé en groupe et à s'entraider. De plus, nous avons pu approfondir, et même apprendre de nouveaux tips, langages de programmation, nouvelles techniques et bien plus. Ce concours sera rude et complexe et nous le comprenons, c'est donc pour cela que nous avons tout mis de notre côté pour pouvoir y arriver, et même exceller dans ce domaine. Est-ce que notre préparation a donc été suffisante ? Avons-nous fait les bons choix ? Les réponses a ces questions sera le fruit de notre concours ! 😊</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Gagner #Prix #Objectifs #Questions</p>
+            </div>
+        </div>
+    </div>
+    <div class="cardes">
+        <div class="carde2">
+            <div class="info">
+                <p class="title">Notre design du Camion</p>
+                <video width="880" height="400" controls autoplay muted>
+                    <source src="SIVID3.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la balise vidéo HTML5.
+                </video>
+                <br>
+                    <label for="speed">Vitesse de lecture : </label>
+                    <select id="speed">
+                        <option value="0.5">0.5x</option>
+                        <option value="1">1x</option>
+                        <option value="1.5">1.5x</option>
+                        <option value="1.75" selected>1.75x</option>
+                        <option value="2">2x</option>
+                    </select>
+                </br>
+            </div>
+        </div>
+    </div>
+    <div class="cardes">
+        <div class="carde4" onclick="">
+            <div class="info">
+                <p class="title">Nos Partenaires</p>
+                <img width="250" height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Chereau-Drive-You-Forward.jpg/210px-Chereau-Drive-You-Forward.jpg">
+                <img width="150" height="150" src="https://julliot.lycee.ac-normandie.fr/local/cache-vignettes/L200xH182/logo-lamo-64800.png?1729004561">
+            </div>
+            <div class="footer">
+                <p class="tag">#Partenaires #Chereau #LaMorandière</p>
+            </div>
+        </div>
+    </div>
+    <div class="cardes">
+        <div class="carde9" onclick="">
+            <div class="info">
+                <p class="title">L'entreprise Chereau</p>
+                <p>Chereau, fondée dans les années 1950, est un leader européen dans la conception de véhicules frigorifiques, spécialisé dans les semi-remorques et camions rigides pour le transport de produits nécessitant une chaîne du froid, tels que la viande, les produits surgelés et pharmaceutiques. L'entreprise se distingue par son innovation constante et son programme "Forever Young" qui prolonge la durée de vie des véhicules tout en garantissant des performances optimales. Chereau propose des solutions adaptées aux besoins des transporteurs, y compris des véhicules motorisés au gaz, hybrides ou 100% électriques. Avec des services d'entretien certifiés, Chereau assure la fiabilité de ses équipements et soutient divers métiers de la distribution en France et en Europe. L'entreprise est reconnue pour la qualité et la longévité de ses produits, et elle joue un rôle clé dans la transition énergétique du secteur du transport frigorifique.</p>
+            </div>
+            <div class="footer">
+                <p class="tag">#Partenaires #Chereau</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Horizontal Scrolling Menu -->
+    <div class="menu-container">
+        <button class="arrow arrow-left" onclick="scrollMenu(-1)">&#9664;</button>
+        <div class="menu-content" id="menuContent">
+            <div class="menu-item">iPhone</div>
+            <div class="menu-item">iPad</div>
+            <div class="menu-item">Apple Watch</div>
+            <div class="menu-item">Apple Vision Pro</div>
+            <div class="menu-item">AirPods</div>
+            <div class="menu-item">AirTag</div>
+            <div class="menu-item">Apple TV 4K</div>
+            <div class="menu-item">HomePod</div>
+            <div class="menu-item">Accessoires</div>
+            <!-- Duplicate items for seamless looping -->
+            <div class="menu-item">iPhone</div>
+            <div class="menu-item">iPad</div>
+            <div class="menu-item">Apple Watch</div>
+            <div class="menu-item">Apple Vision Pro</div>
+            <div class="menu-item">AirPods</div>
+            <div class="menu-item">AirTag</div>
+            <div class="menu-item">Apple TV 4K</div>
+            <div class="menu-item">HomePod</div>
+            <div class="menu-item">Accessoires</div>
+        </div>
+        <button class="arrow arrow-right" onclick="scrollMenu(1)">&#9654;</button>
+    </div>
+
+    <footer>
+        <p>© Tous droits réservés au groupe 2h Camion Chereau : Lallement Célestin, Martin Sénécal-Gacel, Raphael Pons.</p>
+    </footer>
+    <script>
+        // Simulation des données en temps réel
+        let speed = 45;
+        let range = 75;
+        let elapsedTime = 120;
+
+        const speedElement = document.getElementById('speed');
+        const rangeElement = document.getElementById('range');
+        const timeElement = document.getElementById('time');
+
+        function updateData() {
+            // Mettre à jour la vitesse
+            speed = Math.min(speed + Math.random() * 2, 100); // Augmente aléatoirement la vitesse jusqu'à 100 km/h
+            speedElement.innerHTML = `Vitesse : ${speed.toFixed(1)} km/h`;
+
+            // Mettre à jour l'autonomie restante
+            range = Math.max(range - Math.random() * 0.5, 0); // Réduit aléatoirement l'autonomie
+            rangeElement.innerHTML = `Autonomie restante : ${range.toFixed(1)} km`;
+
+            // Mettre à jour le temps écoulé
+            elapsedTime += 1;
+            timeElement.innerHTML = `Temps écoulé : ${elapsedTime} s`;
+        }
+
+        // Mettre à jour les données toutes les secondes
+        setInterval(updateData, 1000);
+
+        // Afficher le loader pendant 10 secondes
+        const loader = document.getElementById('loader');
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 10000);
+
+        const video = document.getElementById('video');
+        const speedSelector = document.getElementById('speed');
+
+        // Définir la vitesse par défaut à 1.75x
+        video.playbackRate = 1.75;
+
+        speedSelector.addEventListener('change', () => {
+            video.playbackRate = speedSelector.value;
+        });
+
+        let currentIndex = 0;
+        const menuContent = document.getElementById('menuContent');
+        const items = document.querySelectorAll('.menu-item');
+        const itemWidth = items[0].offsetWidth;
+        const totalItems = items.length / 2; // Half the items are duplicates
+
+        console.log("Total items:", totalItems);
+        console.log("Item width:", itemWidth);
+
+        function scrollMenu(direction) {
+            currentIndex = (currentIndex + direction + totalItems) % totalItems;
+            console.log("Current index:", currentIndex);
+            menuContent.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+
+        // Auto-scroll
+        let autoScrollInterval = setInterval(() => {
+            scrollMenu(1);
+        }, 3000);
+
+        // Pause auto-scroll on hover
+        menuContent.addEventListener('mouseover', () => {
+            console.log("Mouse over: Pausing auto-scroll");
+            clearInterval(autoScrollInterval);
+        });
+
+        menuContent.addEventListener('mouseout', () => {
+            console.log("Mouse out: Resuming auto-scroll");
+            autoScrollInterval = setInterval(() => {
+                scrollMenu(1);
+            }, 3000);
+        });
+
+    </script>
+</body>
+</html>
