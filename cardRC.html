@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Régulateur de Courant</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Changed to flex-start */
+            min-height: 100vh;
+            margin: 20px; /* Added margin for spacing */
+            background-color: #f4f4f9;
+            font-family: sans-serif;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 1rem;
+            background-color: white;
+            width: 350px;
+            box-shadow: 0 8px 16px rgba(0,0,0,.1);
+            overflow: hidden;
+            margin-top: 20px; /* Added margin-top for spacing */
+        }
+        .header {
+            background-color: rgb(16, 55, 86);
+            box-shadow: 0 10px 15px -3px rgba(33,150,243,.4), 0 4px 6px -4px rgba(33,150,243,.4);
+            height: 10rem;
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+        }
+        .info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .title {
+            color: rgb(38, 50, 56);
+            letter-spacing: 0;
+            line-height: 1.5;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer {
+            padding: 1rem;
+            border-top: 1px solid rgb(236, 239, 241);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(0, 140, 255, 0.082);
+        }
+        .tag {
+            font-weight: 300;
+            font-size: .875rem;
+            display: block;
+        }
+        .action {
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 6px -1px rgba(33,150,243,.4), 0 2px 4px -2px rgba(33,150,243,.4);
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: .875rem;
+            padding: 0.75rem 1.5rem;
+            background-color: rgb(16, 55, 86);
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header"></div>
+        <div class="info">
+            <p class="title">Régulateur de Courant</p>
+            <p>Le régulateur de courant est un dispositif essentiel pour gérer l'énergie produite par un mini panneau solaire, assurant une alimentation stable et sécurisée pour les appareils connectés. Il est souvent utilisé dans les systèmes autonomes, les projets portables, et les applications nécessitant une gestion efficace de l'énergie. Le régulateur de courant fonctionne en ajustant la tension et le courant fournis par le panneau solaire pour correspondre aux besoins des composants alimentés. Il protège également contre les surtensions et les fluctuations de courant, prévenant ainsi les dommages aux appareils.
+
+                Pour réguler le courant, le régulateur utilise des techniques telles que le suivi du point de puissance maximale (MPPT), qui optimise l'extraction d'énergie du panneau solaire en ajustant la charge pour maximiser la puissance produite. Le régulateur peut également inclure des fonctionnalités de surveillance, comme l'affichage de la tension et du courant en temps réel, permettant ainsi une gestion plus précise de l'énergie.
+                
+                Compatible avec des plateformes comme Arduino, le régulateur de courant est facile à intégrer dans divers projets, offrant une solution fiable pour l'utilisation de l'énergie solaire. Il nous permet de protéger l'ensemble de notre circuit et de garantir le bon fonctionnement de notre camion dans toutes les circonstances.</p>
+        </div>
+        <div class="footer">
+            <p class="tag">#Régulateur</p>
+            <button type="button" class="action" onclick="window.location.href='camionSI.html';">Retour</button>
+        </div>
+    </div>
+</body>
+</html>

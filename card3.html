@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Célestin Lallement</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+            font-family: sans-serif;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0.75rem;
+            background-color: white;
+            width: 400px;
+            height: 550px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+        }
+        .header {
+            position: relative;
+            background-clip: border-box;
+            margin-top: 1.5rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
+            border-radius: 0.75rem;
+            background-color: rgb(16, 55, 86);
+            box-shadow: 0 10px 15px -3px rgba(33,150,243,.4), 0 4px 6px -4px rgba(33,150,243,.4);
+            height: 14rem;
+        }
+        .info {
+            border: none;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .title {
+            color: rgb(38 50 56);
+            letter-spacing: 0;
+            line-height: 1.375;
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer {
+            padding: 0.75rem;
+            border: 1px solid rgb(236 239 241);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(0, 140, 255, 0.082);
+        }
+        .tag {
+            font-weight: 300;
+            font-size: .75rem;
+            display: block;
+        }
+        .action {
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 6px -1px rgba(33,150,243,.4), 0 2px 4px -2px rgba(33,150,243,.4);
+            color: rgb(255 255 255);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: .75rem;
+            padding: 0.75rem 1.5rem;
+            background-color: rgb(16, 55, 86);
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header"></div>
+        <div class="info">
+            <p class="title">Célestin Lallement</p>
+            Célestin est notre modélisateur 3D et développeur Web. Il a modélisé les pièces du camion via <a href="https://www.autodesk.com/ca-fr/products/fusion-360/personal" target="_blank">Fusion 360</a>, une application de modélisation 3D (qui peut être payante). De plus, il a mis au point un système d'ailettes arrière, permettant de se rapprocher au plus près des ailettes aérodynamiques à l'arrière du camion Road de Chereau. En outre, il a aidé ses camarades dans la programmation du backend, ainsi qu'en les assistant dans le développement de l'application mobile. Célestin est à l'origine de ce site web et de sa rédaction, et a été le cofondateur de XParcours, un script booster à l'IA pour minimiser la consommation électrique de notre camion. Célestin a pu apprendre et approfondir ses compétences en développement web et en programmes compilés.</p>
+        </div>
+        <div class="footer">
+            <p class="tag">#Python #HTML #CSS #JavaScript #Scratch</p>
+            <button type="button" class="action" onclick="window.location.href='camionSI.html';">Retour</button>
+        </div>
+    </div>
+</body>
+</html>

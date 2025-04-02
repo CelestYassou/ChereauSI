@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Uno</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Changed to flex-start */
+            min-height: 100vh;
+            margin: 20px; /* Added margin for spacing */
+            background-color: #f4f4f9;
+            font-family: sans-serif;
+        }
+        .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 1rem;
+            background-color: white;
+            width: 350px;
+            box-shadow: 0 8px 16px rgba(0,0,0,.1);
+            overflow: hidden;
+            margin-top: 20px; /* Added margin-top for spacing */
+        }
+        .header {
+            background-color: rgb(16, 55, 86);
+            box-shadow: 0 10px 15px -3px rgba(33,150,243,.4), 0 4px 6px -4px rgba(33,150,243,.4);
+            height: 10rem;
+            border-top-left-radius: 0.75rem;
+            border-top-right-radius: 0.75rem;
+        }
+        .info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .title {
+            color: rgb(38, 50, 56);
+            letter-spacing: 0;
+            line-height: 1.5;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .footer {
+            padding: 1rem;
+            border-top: 1px solid rgb(236, 239, 241);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(0, 140, 255, 0.082);
+        }
+        .tag {
+            font-weight: 300;
+            font-size: .875rem;
+            display: block;
+        }
+        .action {
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 6px -1px rgba(33,150,243,.4), 0 2px 4px -2px rgba(33,150,243,.4);
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: .875rem;
+            padding: 0.75rem 1.5rem;
+            background-color: rgb(16, 55, 86);
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header"></div>
+        <div class="info">
+            <p class="title">Panneau Led adressable</p>
+            <p>Le Panneau LED Adressable Grove est un composant électronique polyvalent, souvent utilisé dans des projets de bricolage et d'électronique. Chaque LED du panneau peut être contrôlée individuellement, permettant la création de motifs lumineux complexes et animés. Les LEDs sont généralement de haute luminosité, offrant un affichage clair même en environnement lumineux.
+
+                Compatible avec divers microcontrôleurs comme Arduino, Raspberry Pi, et ESP32, le panneau est facile à intégrer dans des projets variés grâce aux bibliothèques logicielles disponibles. Sa robustesse permet une utilisation prolongée sans défaillance. Le panneau nécessite une alimentation stable, généralement de 5V, et est contrôlé via des signaux numériques envoyés par un microcontrôleur. Chaque LED possède une adresse unique, permettant un contrôle précis de la couleur et de l'intensité lumineuse.
+                
+                La communication se fait via un protocole série, assurant un transfert rapide des données. Les utilisateurs peuvent programmer des animations, afficher des textes ou des images en utilisant des bibliothèques spécifiques. Le Panneau LED Adressable Grove est utilisé pour afficher des messages, des notifications, ou des informations en temps réel, créer des installations artistiques ou des décorations lumineuses, servir d'outil pédagogique pour enseigner la programmation et l'électronique, et enrichir divers projets de bricolage en ajoutant une touche lumineuse et interactive.
+                
+                Dans le cas de notre projet, le panneau sert à nous indiquer le pourcentage de batterie pendant la course, permettant de nous guider dans la conduite à suivre.</p>
+        </div>
+        <div class="footer">
+            <p class="tag">#Leds #Dels</p>
+            <button type="button" class="action" onclick="window.location.href='camionSI.html';">Retour</button>
+        </div>
+    </div>
+</body>
+</html>
